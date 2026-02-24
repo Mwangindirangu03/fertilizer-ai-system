@@ -8,6 +8,17 @@ from chatbot import FertilizerChatbot
 from database import FertilizerDatabase
 
 # Page config
+import sys
+sys.path.insert(0, 'src')
+from pathlib import Path
+
+# Initialize database if it doesn't exist
+db_path = Path("data/fertilizer_db.sqlite")
+if not db_path.exists():
+    import subprocess
+    print("Creating database...")
+    subprocess.run(["python3", "init_database.py"])
+
 st.set_page_config(
     page_title="Fertilizer AI Assistant",
     page_icon="🌾",
