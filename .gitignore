@@ -3,7 +3,10 @@ env/
 __pycache__/
 *.pyc
 *.sqlite
+*.db
 .env
 .streamlit/secrets.toml
 *.log
 .DS_Store
+data/*.sqlite
+data/*.db
